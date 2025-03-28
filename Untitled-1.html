@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: white;
+        }
+        .header {
+            display: flex;
+            width: 100%;
+            background-color: #d0e41c;
+            background: linear-gradient(to left, #eeff00, #b9cc0c);
+            align-items: center;
+        }
+        .text-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .text-section h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 60px;
+            font-weight: bold;
+            color: black;
+            display: inline-block;
+            position: relative;
+            text-shadow: 7px 7px 0px rgba(0, 0, 0, 0.2);
+            margin: 0 auto
+        }
+        
+        .text-section h1::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 3px; 
+            background-color: black;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            animation: glitch 1s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translateX(0px); }
+            100% { transform: translateX(3px); }
+        }
+        .text-section p {
+            max-width: 700px;
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin: 0 auto; 
+            text-align: justify;
+        }
+        .image-section {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(10px 0px 0px rgba(0, 0, 0, 0.3));
+        }
+        .layout-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; 
+            gap: 20px;
+            padding: 20px;
+            align-items: start;
+        }
+        .works-section h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            text-align: center;
+        }
+        
+        .works-section {
+            background-color: black;
+            padding: 50px;
+            height: 600px; 
+            border-radius: 10px;
+        }
+        
+        .work-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px; 
+            height: 100%;
+            align-content: center;
+        }
+        
+        .work-box {
+            background-color: #d0e41c;
+            height: 200px;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .work-box h3 {
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .work-icon {
+            font-size: 2em; 
+            margin-bottom: 10px; 
+        }
+        
+        .work-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-section {
+            background: #f8f8f8;
+            text-align: left;
+            padding: 30px;
+            line-height: 1.6;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        
+        .contact-section p{
+            font-size: 18px;
+            padding: 5%;
+        }
+        
+        .contact-section h2 {
+            font-size: 1.3em;
+            font-family: 'Press Start 2P', cursive;
+            color: black;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        
+        .contact-form button {
+            background-color: #d0e41c;
+            color: #000;
+            font-family: 'Press Start 2P', cursive;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+            padding: 20px 0;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        </style>
+</head>
+<body>
+    <div class="header">
+        <div class="text-section">
+            <h1>Hello!</h1>
+            <br>
+            <br>
+            <br>
+            <p>I'm <span style="color: rgb(48, 70, 10); font-weight: bold;">Fel</span>, an aspiring web designer with a passion for creating visually appealing and user-friendly websites. I focus on clean design, intuitive layouts, and responsive functionality to enhance user experience.</p>
+            <br>
+            <p>Constantly learning and refining my skills in HTML, CSS, JavaScript, and modern design tools. Open to collaborations and opportunities to grow in the field.</p></p>
+        </div>
+        <div class="image-section">
+            <img src="Transhumans - Astro_waifu2x_art_noise1_scale.png" alt="Astronaut Illustration">
+        </div>
+    </div>
+    <div class="layout-container">
+        <div class="works-section">
+            <h2>My Works</h2>
+            <div class="work-boxes">
+                <div class="work-box"><i class="fas fa-cube work-icon"></i><h3>Design</h3><br><p>Creative and user-friendly website designs.</p></div>
+                <div class="work-box"><i class="fas fa-code work-icon"></i><h3>Develop</h3><br><p>Responsive and dynamic web development.</p></div>
+                <div class="work-box"><i class="fas fa-pen work-icon"></i><h3>Write</h3><br><p>Technical and creative content writing.</p></div>
+                <div class="work-box"><i class="fas fa-bullhorn work-icon"></i><h3>Promote</h3><br><p>SEO and digital marketing strategies.</p></div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <p>Let's collaborate! Feel free to drop me a message:</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
